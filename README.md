@@ -29,7 +29,6 @@ Set the preferred debugging level in `dprintf.h`.
 ```
 #include <dprintf.h>
 
-StreamEx mySerial = Serial;
 char myString[] = "World";
 
 void setup() {
@@ -46,9 +45,9 @@ void loop() {
 
 ## Release code
 
-For release versions, simply comment out `DEBUG_ENABLED` in `drpintf.h`.
+For release versions, simply comment `#undef DEBUG_LEVEL in` in your project.
 
-`//#define DEBUG_ENABLED  // Debugging disabled`
+#undef DEBUG_LEVEL
 
 # Contribution
 This is an open source project. You are welcome to make suggestions or contributions. Feel free to contact me if you have any questions.

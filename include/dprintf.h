@@ -13,16 +13,17 @@
 
 #ifndef DPRINTF_H
 #define DPRINTF_H
-
-#include <PrintEx.h>
+#include <Arduino.h>
 
 #define DEBUG_ENABLED  // Enable debugging
-#define DEBUG_LEVEL 1  // VERBOSE 0, INFO 1, WARNING 2, ERROR 3
+#ifndef DEBUG_LEVEL
+  #define DEBUG_LEVEL 2  // default debug level is INFO. Other values are: VERBOSE 0, INFO 1, WARNING 2, ERROR 3
+#endif
 
 // Debug macro
 #ifdef DEBUG_ENABLED
   #define DPRINTF(level, ...) \
-    (level >= DEBUG_LEVEL) ? mySerial.printf(__VA_ARGS__) : 0
+    (level >= DEBUG_LEVEL) ? Serial.printf(__VA_ARGS__) : 0
 #else
   #define DPRINTF(level, ...)
 #endif

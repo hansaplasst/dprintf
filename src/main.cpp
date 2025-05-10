@@ -1,6 +1,8 @@
+#include <Arduino.h>
 #include <dprintf.h>
 
-StreamEx mySerial = Serial;
+#define DEBUG_LEVEL 1  // Define your project debug level: 0 = VERBOSE, 1 = INFO, 2 = WARNING, 3 = ERROR
+
 char myString[] = "World";
 
 void setup() {
