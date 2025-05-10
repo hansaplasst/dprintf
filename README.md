@@ -45,7 +45,7 @@ void loop() {
 
 ## Release code
 
-For release versions, simply comment `#undef DEBUG_LEVEL in` in your project.
+For release versions, simply put `#undef DEBUG_LEVEL` in your project.
 
 #undef DEBUG_LEVEL
 
