@@ -17,7 +17,7 @@
 
 #define DEBUG_ENABLED  // Enable debugging
 #ifndef DEBUG_LEVEL
-  #define DEBUG_LEVEL 2  // default debug level is INFO. Other values are: VERBOSE 0, INFO 1, WARNING 2, ERROR 3
+  #define DEBUG_LEVEL 2  // default debug level is WARNING. Other values are: VERBOSE 0, INFO 1, WARNING 2, ERROR 3
 #endif
 
 // Debug macro
