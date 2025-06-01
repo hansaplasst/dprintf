@@ -22,10 +22,19 @@
 
 // Debug macro
 #ifdef DEBUG_ENABLED
-  #define DPRINTF(level, ...) \
-    (level >= DEBUG_LEVEL) ? Serial.printf(__VA_ARGS__) : 0
-#else
-  #define DPRINTF(level, ...)
+  #define DPRINTF(level, ...)       \
+    {                               \
+      if (level == DEBUG_LEVEL) {   \
+        Serial.print("\033[33m");   \
+        Serial.printf(__VA_ARGS__); \
+        Serial.println("\033[0m");  \
+      }                             \
+      if (level > DEBUG_LEVEL) {    \
+        Serial.print("\033[31m");   \
+        Serial.printf(__VA_ARGS__); \
+        Serial.println("\033[0m");  \
+      }                             \
+    }
 #endif
 
 #endif
