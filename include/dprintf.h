@@ -24,17 +24,44 @@
 #ifdef DEBUG_ENABLED
   #define DPRINTF(level, ...)       \
     {                               \
-      if (level == DEBUG_LEVEL) {   \
-        Serial.print("\033[33m");   \
+      if (level == 0 && level >= DEBUG_LEVEL) {   \
+        Serial.print("[V] ");       \
         Serial.printf(__VA_ARGS__); \
         Serial.println("\033[0m");  \
       }                             \
-      if (level > DEBUG_LEVEL) {    \
+      if (level == 1 && level >= DEBUG_LEVEL) {   \
+        Serial.print("\033[32m");   \
+        Serial.print("[I] ");       \
+        Serial.printf(__VA_ARGS__); \
+        Serial.println("\033[0m");  \
+      }                             \
+      if (level == 2 && level >= DEBUG_LEVEL) {   \
         Serial.print("\033[31m");   \
+        Serial.print("[W] ");       \
+        Serial.printf(__VA_ARGS__); \
+        Serial.println("\033[0m");  \
+      }                             \
+      if (level == 3 && level >= DEBUG_LEVEL) {   \
+        Serial.print("\033[33m");   \
+        Serial.print("[E] ");       \
         Serial.printf(__VA_ARGS__); \
         Serial.println("\033[0m");  \
       }                             \
     }
 #endif
+
+// #define DPRINTF(level, ...)       \
+  //   {                               \
+  //     if (level == DEBUG_LEVEL) {   \
+  //       Serial.print("\033[33m");   \
+  //       Serial.printf(__VA_ARGS__); \
+  //       Serial.println("\033[0m");  \
+  //     }                             \
+  //     if (level > DEBUG_LEVEL) {    \
+  //       Serial.print("\033[31m");   \
+  //       Serial.printf(__VA_ARGS__); \
+  //       Serial.println("\033[0m");  \
+  //     }                             \
+  //   }
 
 #endif
