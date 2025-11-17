@@ -1,0 +1,13 @@
+{
+  "name": "Arduino debug macro for streamlined debugging",
+  "version": "1.0.0",
+  "author": "Hansaplast",
+  "license": "GPL-3.0",
+  "keywords": ["esp32", "arduino", "debug", "macro"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hansaplasst/dprintf.git"
+  },
+  "frameworks": ["arduino"],
+  "platforms": ["arduino"]
+}
